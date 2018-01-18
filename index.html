@@ -34,22 +34,30 @@
 
 
     <main role="main" class="container-fluid">
-      <div class="row">
+      <div class="row no-gutters">
 
-        <div class="col-md-9">
+        <div class="col-lg-9">
 
           <div id="videoContainer" class="embed-responsive embed-responsive-16by9">
-            <video id="videoPlayer" width="100%" height="100%" class="video-js vjs-default-skin" controls>
+            <video id="videoPlayer" width="100%" height="100%" class="embed-responsive-item video-js vjs-default-skin" controls>
             </video>
           </div>
-
-
         </div>
 
-        <div class="col-md-3">
+        <div class="col-lg-3">
           <p id="liveStatus">Ice is ..</p>
-          <h3 class="my-3">Enjoy the stream.</h3>
-          <p>Chat coming soon maybe.</p>
+          <p id="liveStatus">
+            Download and enable this 
+            <a target="blank" href="https://chrome.google.com/webstore/detail/nlfbmbojpeacfghkpbjhddihlkkiljbi">chrome extension</a> 
+            in the meantime to circumvent any issues. 
+            <small><small>
+                I'm looking to fix the need for the extension. If anyone wants to send a PR go to the 
+            <a target="blank" href="https://github.com/IceLiveStream/IceLiveStream.github.io">github</a> or DM my 
+            <a target="blank" href="https://www.reddit.com/message/compose?to=TheFedoraTipper&subject=lulomega&message=">reddit</a></p>
+            </small></small>
+          <div class="">
+            <iframe height=450 width="100%" allowfullscreen="" frameborder="0" src="https://www.youtube.com/live_chat?v=a13YsaTgzwM&embed_domain=www.lulome.ga"></iframe><br />
+          </div>
         </div>
 
       </div>
@@ -58,13 +66,12 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; My website now gimme gimme 2018</p>
+        <p class="m-0 text-center text-white">Enjoy the stream. Copyright &copy; My website now gimme gimme 2018</p>
       </div>
     </footer>
     <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="./flv.js"></script>
     <script src="./stream.js"></script>
 
   </body>

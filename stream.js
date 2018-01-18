@@ -3,20 +3,10 @@ let state = {
 
 }
 
-
-let videoPlayer = {
-
+function setState(newState) {
+  state = Object.assign({}, state, newState)
 }
 
-/*
-  Empty response: {"status":"200","msg":"","data":{"vid":"","status":"0"}}
-  Live response:  {"status":"200","msg":"","data":
-    {"vid":"15162819054075884761","status":"1","watchnumber":"14179","vtime":"1516281936",
-      "title":"Hey babyy\ud83d\udc8b","videolength":"5025",
-      "cover":"http:\/\/live.store.cmcm.com\/big\/liveme\/cover-a014383785209c703b2f2bfb44efb169_icon.jpeg"
-    }
-    }
-*/
 function fetchVideoId (userid, callback) {
   fetch("https://live.ksmobile.net/user/getlive?uid=" + userid)
   .then(function(res){ return res.json() })
@@ -71,7 +61,6 @@ function fetchStream (userid) {
       } else {
         $('#liveStatus').text('Ice is currently not live (no livestream found).')
       }
-
   })
 }
 
@@ -80,16 +69,29 @@ function receivedStreamData(data) {
     $('#liveStatus').text('Ice is live!')
 
     const videoInfo = data["data"]["video_info"]
+    console.log(videoInfo)
     const videoSource = videoInfo["hlsvideosource"] || videoInfo["videosource"] || ''
     const videoType = videoSource.endsWith('flv') ? 'flv' : 'm3u8'
 
-    loadVideo(videoSource, videoType)
+
+    if (state.videoSource != videoSource) {
+      onVideoSourceChanged(videoSource, videoType)
+    }
 
 
   } else {
     $('#liveStatus').text('Ice is currently live, but there was a problem.')
 
   }
+}
+
+
+function onVideoSourceChanged(videoSource, videoType) {
+  setState({
+    videoSource,
+    videoType
+  })
+  loadVideo(videoSource, videoType)
 }
 
 
@@ -104,29 +106,19 @@ function loadVideo(videoSource, videoType) {
       video.play();
   });
  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+    /*video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
     video.addEventListener('canplay',function() {
       video.play();
-    });
+    });*/
   }
 
 
 }
 
-//https://gaming.youtube.com/live_chat?is_popout=1&v=a13YsaTgzwM
-function loadChat() {
-  console.log('loadingchat...')
-  $("#chatContainer").load("https://gaming.youtube.com/live_chat?is_popout=1&v=a13YsaTgzwM", function() {
-    console.log('loaded')
-  });
-}
-
-
-
 
 $(document).ready(function(){// 948467854813044736 user id ICE POSEIDON
 
-  fetchStream('888801827909795840')
+  fetchStream('918148595226902528')
   //fetchStream('948467854813044736') // ICE POSEIDON USER ID 948467854813044736
-  loadChat()
+
 });

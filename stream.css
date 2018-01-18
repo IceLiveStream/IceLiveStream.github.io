@@ -1,0 +1,29 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color:#333;
+  color: #fff;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: black;
+}
+
+.bg-purple {
+    background: #46188d;
+}
+
+#videoPlayer {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
+}

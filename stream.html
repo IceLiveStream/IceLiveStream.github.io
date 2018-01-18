@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ice Poseidon LiveMe</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet">
+      <link href="./stream.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="./static/images/logo.7932ddd.png"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://www.liveme.com/personal.html?userId=948467854813044736">LiveMe Link
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">KFC</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Watermelon</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <main role="main" class="container-fluid">
+      <div class="row">
+
+        <div class="col-md-9">
+
+          <div id="videoContainer" class="embed-responsive embed-responsive-16by9">
+            <video id="videoPlayer" width="100%" height="100%" class="video-js vjs-default-skin" controls>
+            </video>
+          </div>
+
+
+        </div>
+
+        <div class="col-md-3">
+          <p id="liveStatus">Ice is ..</p>
+          <h3 class="my-3">Enjoy the stream.</h3>
+          <p>Chat coming soon maybe.</p>
+        </div>
+
+      </div>
+
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; My website now gimme gimme 2018</p>
+      </div>
+    </footer>
+    <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="./flv.js"></script>
+    <script src="./stream.js"></script>
+
+  </body>
+
+</html>

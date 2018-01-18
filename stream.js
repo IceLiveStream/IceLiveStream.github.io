@@ -100,7 +100,7 @@ function loadVideo(videoSource, videoType) {
   if(Hls.isSupported()) {
     var video = document.getElementById('videoPlayer');
     var hls = new Hls();
-    hls.loadSource(videoSource);
+    hls.loadSource('https://cors-anywhere.herokuapp.com/' + videoSource);
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED,function() {
       video.play();

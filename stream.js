@@ -126,7 +126,7 @@ function loadChat() {
 
 $(document).ready(function(){// 948467854813044736 user id ICE POSEIDON
 
-  fetchStream('196674')
+  fetchStream('888801827909795840')
   //fetchStream('948467854813044736') // ICE POSEIDON USER ID 948467854813044736
   loadChat()
 });

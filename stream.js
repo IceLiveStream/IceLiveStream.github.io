@@ -59,7 +59,7 @@ function fetchStream (userid) {
         .then(function(res){ return res.json() })
         .then(receivedStreamData)
       } else {
-        $('#liveStatus').text('Ice is currently not live (no livestream found).')
+        $('#liveStatus').text('Ice is not live.')
       }
   })
 }
@@ -80,7 +80,7 @@ function receivedStreamData(data) {
 
 
   } else {
-    $('#liveStatus').text('Ice is currently live, but there was a problem.')
+    $('#liveStatus').text('Ice is live, but there was a problem.')
 
   }
 }
@@ -118,7 +118,7 @@ function loadVideo(videoSource, videoType) {
 
 $(document).ready(function(){// 948467854813044736 user id ICE POSEIDON
 
-  fetchStream('918148595226902528')
+  fetchStream('948467854813044736') //918148595226902528 random dude
   //fetchStream('948467854813044736') // ICE POSEIDON USER ID 948467854813044736
 
 });

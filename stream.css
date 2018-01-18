@@ -9,6 +9,10 @@ body {
   color: #fff;
 }
 
+.main-container{
+  height:calc(100vh - 62px);
+}
+
 .footer {
   position: absolute;
   bottom: 0;
